@@ -15,9 +15,9 @@ db.sync()
 .then(() => console.log("Base de datos sincronizada"))
 .catch((error) => console.log(error))
 
-app.use(cors());
 const app = express(); 
- 
+
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => { 
