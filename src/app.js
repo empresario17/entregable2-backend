@@ -3,6 +3,8 @@ const db = require("./utils/database");
 const Todos = require('./models/todos.model');
 const { cast } = require('sequelize');
 require('dotenv').config();
+const cors = require('cors');
+
 const PORT = process.env.PORT || 8000;
 
 db.authenticate()
@@ -13,6 +15,7 @@ db.sync()
 .then(() => console.log("Base de datos sincronizada"))
 .catch((error) => console.log(error))
 
+app.use(cors());
 const app = express(); 
  
 app.use(express.json());
